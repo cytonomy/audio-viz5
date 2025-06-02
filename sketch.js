@@ -28,7 +28,7 @@ const frequencyRanges = [
   { name: "Low Treble", min: 3000, max: 4000, color: [180, 255, 0], threshold: 0.2, group: "high" }, // Cyan
   { name: "Mid Treble", min: 4000, max: 6000, color: [0, 128, 255], threshold: 0.05, group: "high" }, // Light Blue
   { name: "Presence", min: 6000, max: 8000, color: [255, 255, 255], threshold: 0.05, group: "high" },  // Blue
-  { name: "Brilliance", min: 8000, max: 12000, color: [128, 0, 255], threshold: 0.02, group: "high" }, // Purple
+  { name: "Brilliance", min: 8000, max: 12000, color: [128, 0, 255], threshold: 0.05, group: "high" }, // Purple
   { name: "Air", min: 12000, max: 20000, color: [255, 0, 255], threshold: 0.04, group: "high" }     // Magenta
 ];
 
@@ -208,7 +208,7 @@ function createColoredParticle(range, energy) {
   // const x = xPos + random(-xVariation, xVariation);
   // const y = random(height);
   const randvar = random(-1,1);
-  const x = map(rotation%TWO_PI+randvar+rangeIndex,0,(frequencyRanges.length-1),0,width);
+  const x = map(rotation%TWO_PI+randvar+rangeIndex,0,(frequencyRanges.length-1),0,.9*width);
   const y = .5*height+height*random(-.2,.2);
   
   // Create the particle
